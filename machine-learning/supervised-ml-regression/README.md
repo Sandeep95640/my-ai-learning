@@ -269,10 +269,7 @@ Evaluate the performance of your regression model using the following metrics:
 
 ### 1️⃣ Mean Absolute Error (MAE)
 
-- **Formula**:  
-  \[
-  MAE = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
-  \]
+- **Formula**: MAE = (1/n) × Σ | yᵢ - ŷᵢ |
 - **Intuition**: Measures the average magnitude of errors in a set of predictions, without considering their direction.
 - **Interpretation**: Lower MAE indicates better model performance.
 - **Unit**: Same as the target variable.
@@ -281,11 +278,8 @@ Evaluate the performance of your regression model using the following metrics:
 
 ### 2️⃣ Mean Squared Error (MSE)
 
-- **Formula**:  
-  \[
-  MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-  \]
-- **Intuition**: Like MAE, but squares the error values to penalize large errors more heavily.
+- **Formula**: MSE = (1/n) × Σ ( yᵢ - ŷᵢ )²
+- **Intuition**: Like MAE, but squares the errors to penalize larger mistakes.
 - **Interpretation**: Lower MSE indicates better accuracy.
 - **Unit**: Squared unit of the target variable.
 
@@ -293,11 +287,8 @@ Evaluate the performance of your regression model using the following metrics:
 
 ### 3️⃣ Root Mean Squared Error (RMSE)
 
-- **Formula**:  
-  \[
-  RMSE = \sqrt{MSE}
-  \]
-- **Intuition**: Square root of MSE; brings the value back to the same scale as the target variable.
+- **Formula**: RMSE = √MSE
+- **Intuition**: Square root of MSE; easier to interpret since it's in the same units as the target variable.
 - **Interpretation**: Lower RMSE indicates better performance.
 - **Unit**: Same as the target variable.
 
@@ -305,17 +296,14 @@ Evaluate the performance of your regression model using the following metrics:
 
 ### 4️⃣ R² Score (Coefficient of Determination)
 
-- **Formula**:  
-  \[
-  R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}
-  \]
-- **Intuition**: Measures how well the regression predictions approximate the real data points.
-- **Range**:
+- **Formula**: R² = 1 - (SS_res / SS_tot)
+- **Intuition**: Measures how well the regression predictions approximate the actual data.
+- **Range**:  
   - `1.0`: Perfect predictions  
-  - `0.0`: Predicts no better than the mean  
-  - `< 0`: Worse than simply predicting the mean  
+  - `0.0`: No better than predicting the mean  
+  - `< 0`: Worse than predicting the mean  
 - **Interpretation**: Higher R² indicates better model fit.
-- **Unit**: Unitless (proportion of variance explained)
+- **Unit**: Unitless
 
 ---
 
