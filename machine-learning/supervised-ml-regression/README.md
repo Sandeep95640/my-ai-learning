@@ -66,7 +66,7 @@ The most common cost functions used in regression are **Mean Squared Error (MSE)
 
 #### 1. **Mean Squared Error (MSE)**
 
-MSE is the most commonly used cost function in regression. It measures the average of the squared differences between the predicted values (\hat{y}_i\) and the actual values (\y_i).
+MSE is the most commonly used cost function in regression. It measures the average of the squared differences between the predicted values (\(\hat{y}_i\)) and the actual values (\(y_i\)).
 
 ##### Formula:
 $$
@@ -90,7 +90,7 @@ $$
 $$
 
 Where:
-- |y_i = Actual value
+- \(y_i\) = Actual value
 - \(\hat{y}_i\) = Predicted value
 - \(n\) = Number of data points
 
