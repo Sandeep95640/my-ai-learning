@@ -503,36 +503,33 @@ Overfitting and underfitting are common issues in machine learning that affect m
 
 The objective function for **Lasso regression** is:
 
-\[
-\min_{\beta_0, \beta} \left( \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{p} |\beta_j| \right)
-\]
+min(β₀, β) [ ∑(i=1 to n) (yᵢ - ŷᵢ)² + λ ∑(j=1 to p) |βⱼ| ]
 
 Where:
-- \(y_i\) is the actual value of the \(i^{th}\) observation.
-- \(\hat{y}_i\) is the predicted value of the \(i^{th}\) observation.
-- \(\beta_j\) is the coefficient of the \(j^{th}\) feature.
-- \(\lambda\) is the regularization parameter that controls the strength of the penalty.
-- \(p\) is the total number of features.
+-  yᵢ is the actual value of the i-th observation.
+- ŷᵢ is the predicted value of the i-th observation.
+- βⱼ is the coefficient of the j-th feature.
+- λ is the regularization parameter that controls the strength of the penalty.
+- p is the total number of features.
+
 
 ### **Ridge (L2 Regularization)**
 
 The objective function for **Ridge regression** is:
 
-\[
-\min_{\beta_0, \beta} \left( \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right)
-\]
+min(β₀, β) [ ∑(i=1 to n) (yᵢ - ŷᵢ)² + λ ∑(j=1 to p) βⱼ² ]
 
 Where:
-- \(y_i\) is the actual value of the \(i^{th}\) observation.
-- \(\hat{y}_i\) is the predicted value of the \(i^{th}\) observation.
-- \(\beta_j\) is the coefficient of the \(j^{th}\) feature.
-- \(\lambda\) is the regularization parameter that controls the strength of the penalty.
-- \(p\) is the total number of features.
+- yᵢ is the actual value of the i-th observation.
+- ŷᵢ is the predicted value of the i-th observation.
+- βⱼ is the coefficient of the j-th feature.
+- λ is the regularization parameter that controls the strength of the penalty.
+- p is the total number of features.
 
 ## How It Works:
 
 ### **Lasso (L1)**:
-- **Lasso** adds a penalty to the linear regression loss function of the form \( \lambda \sum |\beta_j| \).
+- **Lasso** adds a penalty to the linear regression loss function of the form λ ∑ |βⱼ|, where λ is a constant that controls how strongly the penalty is applied.
 - This penalty forces some of the coefficients to become exactly zero, effectively eliminating certain features from the model, which aids in feature selection.
 
 ## When to Use
