@@ -237,24 +237,106 @@ Gradient Descent allows machine learning models to **learn from data** by minimi
 
 ---
 
-### 🤔 Key Insights
+## 🧪 Model Evaluation
 
-- **`why-mse-not-mae.md`**  
-  Explore the **mathematical reasoning** behind using MSE over MAE during model training and optimization.
+Evaluating your machine learning model's performance is critical to ensure it's learning correctly and generalizing well to unseen data. This section provides scripts and explanations for splitting data and evaluating regression models using standard metrics.
 
 ---
 
-### 🧪 Model Evaluation
+### `train-test-split`
 
-- **`train-test-split.py`**  
-  Learn how to properly split your dataset for training and testing. Prevents overfitting and ensures fair evaluation.
+**Purpose**:  
+Split your dataset into **training** and **testing** sets using `train_test_split` from `sklearn.model_selection`.
 
-- **`model-evaluation-metrics.py`**  
-  Understand and calculate key metrics:  
-  - Mean Absolute Error (MAE)  
-  - Mean Squared Error (MSE)  
-  - Root Mean Squared Error (RMSE)  
-  - R² Score
+**Why?**  
+- Prevents **overfitting** by evaluating on data the model hasn't seen during training.
+- Helps assess how well the model will perform in real-world scenarios.
+
+**Example Code**:
+```python
+from sklearn.model_selection import train_test_split
+
+# X = features, y = target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 80% for training, 20% for testing
+
+# 📊 Model Evaluation Metrics (Regression)
+
+Evaluating your model correctly is essential for understanding how well it performs and how much error it is making on unseen data.
+
+---
+
+### 1️⃣ Mean Absolute Error (MAE)
+
+- **Formula**:  
+  \[
+  MAE = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
+  \]
+- **Intuition**: Measures the average magnitude of errors in a set of predictions, without considering their direction.
+- **Interpretation**: Lower is better.
+
+---
+
+### 2️⃣ Mean Squared Error (MSE)
+
+- **Formula**:  
+  \[
+  MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+  \]
+- **Intuition**: Similar to MAE, but squares the errors, penalizing larger errors more.
+- **Interpretation**: Lower is better.
+
+---
+
+### 3️⃣ Root Mean Squared Error (RMSE)
+
+- **Formula**:  
+  \[
+  RMSE = \sqrt{MSE}
+  \]
+- **Intuition**: Brings MSE back to the original units of the target variable.
+- **Interpretation**: Easier to interpret than MSE; lower is better.
+
+---
+
+### 4️⃣ R² Score (Coefficient of Determination)
+
+- **Formula**:  
+  \[
+  R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}
+  \]
+- **Intuition**: Indicates how well the model captures the variance in the data.
+- **Range**:  
+  - `1.0`: Perfect predictions  
+  - `0.0`: Predicts no better than the mean  
+  - `< 0`: Worse than predicting the mean  
+- **Interpretation**: Higher is better.
+
+---
+
+## 🧪 Example Code
+
+```python
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import numpy as np
+
+# Example data
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2, 8]
+
+# Evaluation Metrics
+mae = mean_absolute_error(y_true, y_pred)
+mse = mean_squared_error(y_true, y_pred)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_true, y_pred)
+
+# Results
+print(f"Mean Absolute Error (MAE): {mae:.2f}")
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+print(f"R² Score: {r2:.2f}")
+
 
 ---
 
