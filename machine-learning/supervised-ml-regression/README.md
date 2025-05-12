@@ -481,21 +481,58 @@ Overfitting and underfitting are common issues in machine learning that affect m
 
 ### 📏 Regularization Techniques
 
-### `l1-l2-regularization.py`
 
-**Purpose**:  
-Learn how to apply **L1 (Lasso)** and **L2 (Ridge)** regularization techniques in regression models to prevent overfitting by penalizing large coefficients.
+# L1 (Lasso) and L2 (Ridge) Regularization for Regression Models
 
-**Key Concepts**:
-- **Lasso (L1)**: Performs feature selection by driving some coefficients to zero.
-- **Ridge (L2)**: Shrinks all coefficients evenly to prevent overfitting but does not drive them to zero.
+# Regularization methods help in reducing the model complexity and avoid fitting noise in the data, especially in the presence of multicollinearity or when the number of features is large.
 
-**When to Use**:
-- **Lasso**: When you expect only a few features to be significant.
-- **Ridge**: When you want to reduce the magnitude of all coefficients, but not eliminate them entirely.
+- **Lasso (L1)**: It penalizes the absolute value of coefficients and can drive some coefficients to zero, effectively performing feature selection.
+- **Ridge (L2)**: It penalizes the squared value of the coefficients and shrinks them evenly, preventing them from becoming too large but does not eliminate any feature entirely.
+
+## Key Concepts
+
+- **Lasso (L1 Regularization)**:
+    - Lasso applies a penalty proportional to the absolute value of the coefficients.
+    - Can reduce some coefficients to zero, which helps in feature selection.
+    - Suitable when you expect that only a few features are significant.
+
+    **Mathematical Formula**:
+    The objective function for Lasso regression is:
+    \[
+    \min_{\beta_0, \beta} \left( \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{p} |\beta_j| \right)
+    \]
+    where:
+    - \(y_i\) is the actual value,
+    - \(\hat{y}_i\) is the predicted value,
+    - \(\beta_j\) is the coefficient for feature \(j\),
+    - \(\lambda\) is the regularization parameter controlling the strength of regularization.
+
+- **Ridge (L2 Regularization)**:
+    - Ridge applies a penalty proportional to the square of the coefficients.
+    - Reduces the size of coefficients but doesn’t eliminate them.
+    - Suitable when you believe all features have some impact but want to control their magnitude.
+
+    **Mathematical Formula**:
+    The objective function for Ridge regression is:
+    \[
+    \min_{\beta_0, \beta} \left( \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right)
+    \]
+    where:
+    - \(y_i\) is the actual value,
+    - \(\hat{y}_i\) is the predicted value,
+    - \(\beta_j\) is the coefficient for feature \(j\),
+    - \(\lambda\) is the regularization parameter controlling the strength of regularization.
+
+## How It Works
+- Both Lasso and Ridge regression are variations of linear regression that add a regularization term to the loss function.
+- **Lasso**: Adds a penalty term of the form \( \lambda \sum |\beta_j| \) to the linear regression loss function, where \( \lambda \) is a tuning parameter.
+- **Ridge**: Adds a penalty term of the form \( \lambda \sum \beta_j^2 \) to the linear regression loss function.
+
+## When to Use
+- **Lasso**: Use Lasso when you expect only a few features to be significant and want to eliminate others entirely.
+- **Ridge**: Use Ridge when you believe all features have some impact but want to reduce their magnitude to avoid overfitting.
 
 ---
-
 ### ⚖️ Bias-Variance Tradeoff
 
 
