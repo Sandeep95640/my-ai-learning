@@ -56,9 +56,51 @@ y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
 
 ### ⚙️ Math Behind the Learning
 
-- **`cost-function.py`**  
-  Introduction to **Mean Squared Error (MSE)** — how models measure error and why it's essential for optimization.
+### 📊 **Cost Function in Regression**
 
+In regression problems, the **cost function** (also known as **loss function**) measures the difference between the predicted values and the actual values. The goal is to minimize this cost function during model training to make the model's predictions as accurate as possible.
+
+The most common cost functions used in regression are **Mean Squared Error (MSE)** and **Mean Absolute Error (MAE)**.
+
+---
+
+#### 1. **Mean Squared Error (MSE)**
+
+MSE is the most commonly used cost function in regression. It measures the average of the squared differences between the predicted values (\(\hat{y}_i\)) and the actual values (\(y_i\)).
+
+##### Formula:
+\[
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]
+Where:
+- \(y_i\) = Actual value
+- \(\hat{y}_i\) = Predicted value
+- \(n\) = Number of data points
+
+---
+
+#### 2. **Mean Absolute Error (MAE)**
+
+MAE measures the average of the absolute differences between the predicted values and the actual values. It is less sensitive to outliers compared to MSE.
+
+##### Formula:
+\[
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\]
+Where:
+- \(y_i\) = Actual value
+- \(\hat{y}_i\) = Predicted value
+- \(n\) = Number of data points
+
+---
+
+### ✨ **Choosing the Right Cost Function**
+- **MSE** is preferred when you want to heavily penalize large errors, as it squares the errors.
+- **MAE** is preferred when you want to treat all errors equally and are more robust to outliers.
+
+
+
+  
 - **`derivative-partial-derivative.py`**  
   Grasp the importance of derivatives in machine learning. You'll learn how models use calculus to update weights.
 
