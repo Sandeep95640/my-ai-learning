@@ -420,10 +420,9 @@ Some machine learning models, like neural networks, perform better when features
 For a column "Age" with values `[20, 30, 40, 50]`, Min-Max Scaling would transform them to values between 0 and 1, where:
 - Min = 20, Max = 50
 - For "Age" = 20:  
-  \(\frac{20 - 20}{50 - 20} = 0\)
+   = (20 - 20)/(50 - 20) = 0
 - For "Age" = 50:  
-  \(\frac{50 - 20}{50 - 20} = 1\)
-
+   = (50 - 20)/(50 - 20) = 1
 After Min-Max Scaling, the values would be `[0, 0.33, 0.66, 1]`.
 
 ---
@@ -440,36 +439,80 @@ After Min-Max Scaling, the values would be `[0, 0.33, 0.66, 1]`.
 
 ---
 
-### 🧮 Advanced Regression
+# Advanced Regression Techniques
 
-- **`polynomial-regression.ipynb`**  
-  Learn how to fit **non-linear data** using polynomial features. Understand when and how to use this approach.
+This project covers various advanced regression techniques, including handling non-linear data, preventing overfitting/underfitting, regularization methods, and understanding the bias-variance tradeoff. The following sections explain each concept in detail.
 
 ---
 
+## 🧮 Advanced Regression
+
+**Purpose**:  
+ Polynomial regression allows the model to learn non-linear relationships by adding higher-degree polynomial features.
+
+**Key Concepts**:
+- Polynomial features are added to the original dataset, such as quadratic (x²), cubic (x³), etc.
+- **When to Use**: Use when you suspect a non-linear relationship between variables.
+
+**Example**:  
+- Fitting a quadratic curve to a dataset: \( y = a + b_1x + b_2x^2 \)
+
 ### ⚠️ Overfitting vs Underfitting
 
-- **`overfitting-underfitting.md`**  
-  Know the signs of underfitting (too simple) and overfitting (too complex). Learn to diagnose your model’s behavior.
+Overfitting and underfitting are common issues in machine learning that affect model performance.
 
-- **`overfitting-remedies.py`**  
-  Practical techniques to solve both problems — from cross-validation to regularization and adding more data.
+**Key Concepts**:
+- **Overfitting**: The model is too complex and learns the noise in the data, leading to poor generalization.
+- **Underfitting**: The model is too simple and cannot capture the underlying patterns in the data.
+
+**How to Diagnose**:
+- **Cross-validation**: Use cross-validation techniques to understand how well the model generalizes.
+- **Training and Test Error**: A large gap between training and test error indicates overfitting, while both errors being high suggests underfitting.
+
+### `overfitting-remedies`
+
+**Remedies**:
+1. **Cross-Validation**: Helps evaluate model performance across multiple subsets of the data.
+2. **Regularization**: L1 (Lasso) and L2 (Ridge) regularization help prevent overfitting.
+3. **Adding More Data**: More data can help the model generalize better.
+4. **Pruning**: Reducing complexity in decision trees or other models.
 
 ---
 
 ### 📏 Regularization Techniques
 
-- **`l1-l2-regularization.py`**  
-  Apply **L1 (Lasso)** and **L2 (Ridge)** regularization in your regression models. Learn how these help prevent overfitting.
+### `l1-l2-regularization.py`
+
+**Purpose**:  
+Learn how to apply **L1 (Lasso)** and **L2 (Ridge)** regularization techniques in regression models to prevent overfitting by penalizing large coefficients.
+
+**Key Concepts**:
+- **Lasso (L1)**: Performs feature selection by driving some coefficients to zero.
+- **Ridge (L2)**: Shrinks all coefficients evenly to prevent overfitting but does not drive them to zero.
+
+**When to Use**:
+- **Lasso**: When you expect only a few features to be significant.
+- **Ridge**: When you want to reduce the magnitude of all coefficients, but not eliminate them entirely.
 
 ---
 
 ### ⚖️ Bias-Variance Tradeoff
 
-- **`bias-variance-tradeoff.md`**  
-  Explore one of the most important concepts in machine learning:  
-  **Bias (error due to underfitting) vs. Variance (error due to overfitting)** — and how to balance them.
+
+**Key Concepts**:
+- **Bias**: The error due to overly simplistic assumptions about the data (underfitting).
+- **Variance**: The error due to the model's sensitivity to small fluctuations in the data (overfitting).
+- **Goal**: Find a balance between bias and variance to build an optimal model.
+
+**Ideal Scenario**:
+- Low bias and low variance result in good generalization.
+
+**Tradeoff**:
+- **High Bias, Low Variance**: Often leads to underfitting.
+- **Low Bias, High Variance**: Leads to overfitting.
+- **Balanced Bias and Variance**: Leads to optimal performance.
 
 ---
 
-## 📂 Folder Structure
+
+
