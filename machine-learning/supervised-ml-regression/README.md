@@ -14,7 +14,7 @@ You can explore, run, or modify the code to understand how supervised regression
 
 ### ✅ Basics of Regression
 
-- **`simple-linear-regression.py`**  
+
   ### **Linear Regression**
 
 - Linear Regression is a supervised machine learning algorithm used to model the relationship between a **dependent variable** (target) and an **independent variable** (feature).
