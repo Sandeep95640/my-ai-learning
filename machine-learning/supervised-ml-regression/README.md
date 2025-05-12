@@ -42,7 +42,8 @@ You can explore, run, or modify the code to understand how supervised regression
 ### 🧮 Equation:
 y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
 
-![Image Description]([https://example.com/path-to-image.jpg](https://miro.medium.com/v2/resize:fit:560/1*HLN6FxlXrzDtYN0KAlom4A.png))
+![Image Description](https://miro.medium.com/v2/resize:fit:560/1*HLN6FxlXrzDtYN0KAlom4A.png)
+
 ### 📌 Where:
 - **y**: Dependent variable  
 - **x₁, x₂, ..., xₙ**: Independent variables  
