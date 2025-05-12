@@ -20,6 +20,9 @@ You can explore, run, or modify the code to understand how supervised regression
 - Linear Regression is a supervised machine learning algorithm used to model the relationship between a **dependent variable** (target) and an **independent variable** (feature).
 - In **single variable linear regression**, there is only **one input feature** and **one output variable**.
 - The model aims to fit a **line of best fit** using the equation:Y=mX+c
+
+   ![Regression Graph](https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg)
+
     
     Y = m X + c
     
@@ -31,8 +34,6 @@ You can explore, run, or modify the code to understand how supervised regression
     - c: Y-intercept (constant)
  
   
-    ![Regression Graph](https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg)
-
 
 - **`multiple-linear-regression.py`**  
   Learn how multiple independent variables impact a continuous target. We dive into matrix operations and feature handling here.
