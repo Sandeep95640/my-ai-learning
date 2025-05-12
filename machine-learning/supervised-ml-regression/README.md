@@ -102,11 +102,89 @@ Where:
 
 
   
-- **`derivative-partial-derivative.py`**  
-  Grasp the importance of derivatives in machine learning. You'll learn how models use calculus to update weights.
+# Derivatives and Chain Rule in Machine Learning
 
-- **`chain-rule.py`**  
-  Dive into nested function differentiation. Learn how complex learning models use the chain rule to compute gradients.
+## Overview
+
+This repository contains Python code that demonstrates the concepts of **derivatives**, **partial derivatives**, and the **chain rule** in the context of **machine learning (ML) regression models**. These concepts are fundamental for understanding optimization algorithms, particularly in training models via **gradient descent**.
+
+In ML, the objective is to minimize a **cost function** (or **loss function**) that measures how far the model's predictions are from the true values. By calculating the derivative of the cost function with respect to each parameter (such as weights in a linear regression model), we determine the direction to adjust these parameters to reduce the error.
+
+---
+
+### derivative-partial-derivative
+
+This script explains the importance of derivatives and partial derivatives in machine learning regression models, particularly in optimization. These derivatives help in adjusting model parameters iteratively to minimize errors during training, typically through **gradient descent**.
+
+### Example in Machine Learning Regression:
+
+Consider a simple linear regression model:
+
+\[
+y = w_1 x + w_0
+\]
+
+Where:
+- \( y \) is the predicted value,
+- \( x \) is the input feature,
+- \( w_1 \) is the weight (slope),
+- \( w_0 \) is the bias (intercept).
+
+To train the model, we use **Mean Squared Error (MSE)** as the cost function:
+
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]
+
+Where:
+- \( y_i \) is the actual value,
+- \( \hat{y}_i \) is the predicted value.
+
+In **gradient descent**, the derivative of the **MSE** with respect to the model parameters (weights) is calculated. The **partial derivatives** guide us to adjust the weights in the direction that minimizes the error.
+
+For example, the partial derivative of **MSE** with respect to \( w_1 \) (slope) is:
+
+\[
+\frac{\partial MSE}{\partial w_1} = -\frac{2}{n} \sum_{i=1}^{n} x_i (y_i - \hat{y}_i)
+\]
+
+This derivative provides the gradient, which is used to update \( w_1 \) in the direction of decreasing error, and the process repeats iteratively during model training.
+
+---
+
+### chain-rule
+
+The **chain rule** is a fundamental concept in calculus used to compute the derivative of a composite function. In machine learning, the chain rule is particularly helpful when there are multiple steps or functions involved in the model.
+
+In simple linear regression or other ML models, the chain rule aids in computing the derivative of the cost function with respect to the model's parameters (weights). This is essential for optimization, particularly in **gradient descent**.
+
+### Example in Machine Learning Regression (Chain Rule):
+
+Consider the same linear regression model as before:
+
+\[
+y = w_1 x + w_0
+\]
+
+The cost function is **Mean Squared Error (MSE)**:
+
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]
+
+To minimize the **MSE**, we need to compute the gradients of the MSE with respect to the weights \( w_0 \) (bias) and \( w_1 \) (slope). The chain rule allows us to break down these gradients into simpler components.
+
+For example, to find the gradient with respect to \( w_1 \), we apply the chain rule:
+
+\[
+\frac{\partial MSE}{\partial w_1} = \frac{\partial MSE}{\partial \hat{y}_i} \cdot \frac{\partial \hat{y}_i}{\partial w_1}
+\]
+
+Here:
+- \( \frac{\partial MSE}{\partial \hat{y}_i} \) represents the change in error with respect to the predicted value \( \hat{y}_i \),
+- \( \frac{\partial \hat{y}_i}{\partial w_1} \) shows how the predicted value \( \hat{y}_i \) changes with respect to \( w_1 \).
+
+By applying the chain rule, we can break down the derivative into parts, making it easier to compute gradients and update the model's parameters through gradient descent.
 
 ---
 
