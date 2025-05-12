@@ -40,12 +40,9 @@ You can explore, run, or modify the code to understand how supervised regression
 **Multiple Linear Regression** is a statistical technique that models the relationship between one **dependent variable** and two or more **independent variables**.
 
 ### 🧮 Equation:
-\[
-y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon
-\]
+y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
 
-![Multiple Linear Regression](https://upload.wikimedia.org/wikipedia/commons/8/86/Multiple_regression.svg)
-
+![Image Description]([https://example.com/path-to-image.jpg](https://miro.medium.com/v2/resize:fit:560/1*HLN6FxlXrzDtYN0KAlom4A.png))
 ### 📌 Where:
 - **y**: Dependent variable  
 - **x₁, x₂, ..., xₙ**: Independent variables  
