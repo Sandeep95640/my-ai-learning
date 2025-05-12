@@ -104,87 +104,65 @@ Where:
   
 # Derivatives and Chain Rule in Machine Learning
 
-## Overview
+In machine learning, the objective is to minimize a **cost function** (or loss function), which measures how far the model's predictions are from the actual values. To achieve this, we compute the **derivative** of the cost function with respect to each model parameter (such as weights and biases). These derivatives help determine how to update the parameters to reduce prediction error.
 
-This repository contains Python code that demonstrates the concepts of **derivatives**, **partial derivatives**, and the **chain rule** in the context of **machine learning (ML) regression models**. These concepts are fundamental for understanding optimization algorithms, particularly in training models via **gradient descent**.
-
-In ML, the objective is to minimize a **cost function** (or **loss function**) that measures how far the model's predictions are from the true values. By calculating the derivative of the cost function with respect to each parameter (such as weights in a linear regression model), we determine the direction to adjust these parameters to reduce the error.
+This concept is especially important in optimization algorithms like **gradient descent**, where the model parameters are adjusted iteratively using the gradient (i.e., the derivative) of the cost function.
 
 ---
 
-### derivative-partial-derivative
-
-This script explains the importance of derivatives and partial derivatives in machine learning regression models, particularly in optimization. These derivatives help in adjusting model parameters iteratively to minimize errors during training, typically through **gradient descent**.
-
-### Example in Machine Learning Regression:
+## 🔹 Example: Derivatives in Linear Regression
 
 Consider a simple linear regression model:
+ŷ = w₁x + w₀
 
-\[
-y = w_1 x + w_0
-\]
 
 Where:
-- \( y \) is the predicted value,
-- \( x \) is the input feature,
-- \( w_1 \) is the weight (slope),
-- \( w_0 \) is the bias (intercept).
+- `ŷ` is the predicted value,
+- `x` is the input feature,
+- `w₁` is the weight (slope),
+- `w₀` is the bias (intercept).
 
-To train the model, we use **Mean Squared Error (MSE)** as the cost function:
+The **Mean Squared Error (MSE)** is commonly used as the cost function:
 
-\[
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\]
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
 
 Where:
-- \( y_i \) is the actual value,
-- \( \hat{y}_i \) is the predicted value.
+- `yᵢ` is the actual value,
+- `ŷᵢ` is the predicted value.
 
-In **gradient descent**, the derivative of the **MSE** with respect to the model parameters (weights) is calculated. The **partial derivatives** guide us to adjust the weights in the direction that minimizes the error.
+To minimize the MSE, we compute the partial derivatives with respect to each parameter. For instance, the derivative of MSE with respect to `w₁` is:
 
-For example, the partial derivative of **MSE** with respect to \( w_1 \) (slope) is:
+∂MSE/∂w₁ = -(2/n) * Σ xᵢ(yᵢ - ŷᵢ)
+---
 
-\[
-\frac{\partial MSE}{\partial w_1} = -\frac{2}{n} \sum_{i=1}^{n} x_i (y_i - \hat{y}_i)
-\]
-
-This derivative provides the gradient, which is used to update \( w_1 \) in the direction of decreasing error, and the process repeats iteratively during model training.
+This **gradient** tells us the direction and magnitude to update `w₁` in order to reduce error, which is repeatedly applied in gradient descent.
 
 ---
 
-### chain-rule
+## 🔹 Chain Rule in Machine Learning
 
-The **chain rule** is a fundamental concept in calculus used to compute the derivative of a composite function. In machine learning, the chain rule is particularly helpful when there are multiple steps or functions involved in the model.
+The **chain rule** in calculus is used to compute the derivative of **composite functions**, which is common in machine learning when multiple functions are nested (e.g., in neural networks).
 
-In simple linear regression or other ML models, the chain rule aids in computing the derivative of the cost function with respect to the model's parameters (weights). This is essential for optimization, particularly in **gradient descent**.
+In linear regression, the prediction `ŷᵢ` is a function of the weights, and the cost function is a function of these predictions. To compute the derivative of the cost function with respect to weights, we use the chain rule.
 
-### Example in Machine Learning Regression (Chain Rule):
+### Example using Chain Rule:
 
-Consider the same linear regression model as before:
+Given:
 
-\[
-y = w_1 x + w_0
-\]
+ŷᵢ = w₁xᵢ + w₀
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
 
-The cost function is **Mean Squared Error (MSE)**:
 
-\[
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\]
+To compute the gradient with respect to `w₁`, apply the chain rule:
 
-To minimize the **MSE**, we need to compute the gradients of the MSE with respect to the weights \( w_0 \) (bias) and \( w_1 \) (slope). The chain rule allows us to break down these gradients into simpler components.
+∂MSE/∂w₁ = ∂MSE/∂ŷᵢ * ∂ŷᵢ/∂w₁
 
-For example, to find the gradient with respect to \( w_1 \), we apply the chain rule:
 
-\[
-\frac{\partial MSE}{\partial w_1} = \frac{\partial MSE}{\partial \hat{y}_i} \cdot \frac{\partial \hat{y}_i}{\partial w_1}
-\]
+Where:
+- `∂MSE/∂ŷᵢ` is the derivative of the cost with respect to the predicted value,
+- `∂ŷᵢ/∂w₁` is how the prediction changes with the weight `w₁`.
 
-Here:
-- \( \frac{\partial MSE}{\partial \hat{y}_i} \) represents the change in error with respect to the predicted value \( \hat{y}_i \),
-- \( \frac{\partial \hat{y}_i}{\partial w_1} \) shows how the predicted value \( \hat{y}_i \) changes with respect to \( w_1 \).
-
-By applying the chain rule, we can break down the derivative into parts, making it easier to compute gradients and update the model's parameters through gradient descent.
+By breaking the derivative into smaller parts using the chain rule, we simplify the computation and make it easier to apply gradient descent.
 
 ---
 
