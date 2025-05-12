@@ -261,9 +261,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # 80% for training, 20% for testing
 
-# 📊 Model Evaluation Metrics (Regression)
+## 📊 Regression Evaluation Metrics
 
-Evaluating your model correctly is essential for understanding how well it performs and how much error it is making on unseen data.
+Evaluate the performance of your regression model using the following metrics:
 
 ---
 
@@ -274,7 +274,8 @@ Evaluating your model correctly is essential for understanding how well it perfo
   MAE = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
   \]
 - **Intuition**: Measures the average magnitude of errors in a set of predictions, without considering their direction.
-- **Interpretation**: Lower is better.
+- **Interpretation**: Lower MAE indicates better model performance.
+- **Unit**: Same as the target variable.
 
 ---
 
@@ -284,8 +285,9 @@ Evaluating your model correctly is essential for understanding how well it perfo
   \[
   MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
   \]
-- **Intuition**: Similar to MAE, but squares the errors, penalizing larger errors more.
-- **Interpretation**: Lower is better.
+- **Intuition**: Like MAE, but squares the error values to penalize large errors more heavily.
+- **Interpretation**: Lower MSE indicates better accuracy.
+- **Unit**: Squared unit of the target variable.
 
 ---
 
@@ -295,8 +297,9 @@ Evaluating your model correctly is essential for understanding how well it perfo
   \[
   RMSE = \sqrt{MSE}
   \]
-- **Intuition**: Brings MSE back to the original units of the target variable.
-- **Interpretation**: Easier to interpret than MSE; lower is better.
+- **Intuition**: Square root of MSE; brings the value back to the same scale as the target variable.
+- **Interpretation**: Lower RMSE indicates better performance.
+- **Unit**: Same as the target variable.
 
 ---
 
@@ -306,12 +309,17 @@ Evaluating your model correctly is essential for understanding how well it perfo
   \[
   R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}
   \]
-- **Intuition**: Indicates how well the model captures the variance in the data.
-- **Range**:  
+- **Intuition**: Measures how well the regression predictions approximate the real data points.
+- **Range**:
   - `1.0`: Perfect predictions  
   - `0.0`: Predicts no better than the mean  
-  - `< 0`: Worse than predicting the mean  
-- **Interpretation**: Higher is better.
+  - `< 0`: Worse than simply predicting the mean  
+- **Interpretation**: Higher R² indicates better model fit.
+- **Unit**: Unitless (proportion of variance explained)
+
+---
+
+✅ These metrics give you insight into how accurate and reliable your regression model is.
 
 ---
 
