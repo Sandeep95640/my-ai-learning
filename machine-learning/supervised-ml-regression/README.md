@@ -29,6 +29,8 @@ You can explore, run, or modify the code to understand how supervised regression
     - X: Input feature
     - m: Slope of the line (coefficient)
     - c: Y-intercept (constant)
+ 
+  
     ![Regression Graph](https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg)
 
 
