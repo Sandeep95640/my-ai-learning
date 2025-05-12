@@ -260,6 +260,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 80% for training, 20% for testing
+```
 
 ## 📊 Regression Evaluation Metrics
 
@@ -299,9 +300,9 @@ Evaluate the performance of your regression model using the following metrics:
 - **Formula**: R² = root(MSE)
 - **Intuition**: Measures how well the regression predictions approximate the actual data.
 - **Range**:  
-  - `1.0`: Perfect predictions  
-  - `0.0`: No better than predicting the mean  
-  - `< 0`: Worse than predicting the mean  
+  - 1.0: Perfect predictions  
+  - 0.0: No better than predicting the mean  
+  - < 0: Worse than predicting the mean  
 - **Interpretation**: Higher R² indicates better model fit.
 - **Unit**: Unitless
 
@@ -332,7 +333,7 @@ print(f"Mean Absolute Error (MAE): {mae:.2f}")
 print(f"Mean Squared Error (MSE): {mse:.2f}")
 print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
 print(f"R² Score: {r2:.2f}")
-
+```
 
 ---
 
