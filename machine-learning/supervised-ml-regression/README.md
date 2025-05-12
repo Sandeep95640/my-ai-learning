@@ -1,42 +1,110 @@
-# Supervised Machine Learning - Regression
+# 📊 Supervised Machine Learning — Regression
 
-Welcome to the **Supervised Machine Learning** section focusing on **Regression** models! Here, you'll find my notes, projects, and code snippets dedicated to understanding and implementing various regression techniques.
-
----
-
-## 📚 Overview
-
-Regression models are a type of **supervised learning** algorithm used for predicting continuous values. This section covers:
-
-- **Linear Regression**
-- **Polynomial Regression**
-- **Ridge and Lasso Regression**
-- **Multiple Linear Regression**
+Welcome to the **Supervised Regression** section of my AI learning journey!  
+This folder covers the complete theory and hands-on implementation of regression models using Python, from the very basics to regularization and model evaluation. 🚀
 
 ---
 
-## 🔧 Key Concepts Covered
+## 📚 Topics Covered
 
-- **Hypothesis Functions**
-- **Cost Function & Gradient Descent**
-- **Evaluation Metrics**: MSE, RMSE, MAE
-- **Feature Selection & Engineering**
+Each topic below is backed with Python scripts, Jupyter notebooks, or Markdown notes.  
+You can explore, run, or modify the code to understand how supervised regression truly works.
 
 ---
 
-## 📂 Folder Contents
+### ✅ Basics of Regression
 
-- `linear-regression.py` - Code for basic linear regression implementation
-- `polynomial-regression.ipynb` - Jupyter Notebook for polynomial regression exploration
-- `regression-diagnostics.md` - A markdown file explaining model diagnostics
-- `examples/` - Additional small datasets and projects
+- **`simple-linear-regression.py`**  
+  Understand the core idea of fitting a straight line to data with one feature. Ideal for building strong foundations in supervised learning.
+
+- **`multiple-linear-regression.py`**  
+  Learn how multiple independent variables impact a continuous target. We dive into matrix operations and feature handling here.
 
 ---
 
-## 🚀 Quick Start
+### ⚙️ Math Behind the Learning
 
-To get started with regression, clone this repo and run the following:
-```bash
-git clone https://github.com/your-username/ai-learning.git
-cd ai-learning/machine-learning/supervised-ml-regression
-python linear-regression.py
+- **`cost-function.py`**  
+  Introduction to **Mean Squared Error (MSE)** — how models measure error and why it's essential for optimization.
+
+- **`derivative-partial-derivative.py`**  
+  Grasp the importance of derivatives in machine learning. You'll learn how models use calculus to update weights.
+
+- **`chain-rule.py`**  
+  Dive into nested function differentiation. Learn how complex learning models use the chain rule to compute gradients.
+
+---
+
+### 🧠 Gradient Descent
+
+- **`gradient-descent-theory.md`**  
+  An intuitive guide to understanding how gradient descent finds the optimal solution step-by-step.
+
+- **`gradient-descent-implementation.py`**  
+  A clean Python implementation of gradient descent. Learn how to write it from scratch and visualize the learning process.
+
+---
+
+### 🤔 Key Insights
+
+- **`why-mse-not-mae.md`**  
+  Explore the **mathematical reasoning** behind using MSE over MAE during model training and optimization.
+
+---
+
+### 🧪 Model Evaluation
+
+- **`train-test-split.py`**  
+  Learn how to properly split your dataset for training and testing. Prevents overfitting and ensures fair evaluation.
+
+- **`model-evaluation-metrics.py`**  
+  Understand and calculate key metrics:  
+  - Mean Absolute Error (MAE)  
+  - Mean Squared Error (MSE)  
+  - Root Mean Squared Error (RMSE)  
+  - R² Score
+
+---
+
+### 🔧 Data Preprocessing
+
+- **`data-preprocessing.py`**  
+  - **One-Hot Encoding** for categorical features  
+  - **StandardScaler** for normalization  
+  These preprocessing steps ensure your model learns effectively and fairly.
+
+---
+
+### 🧮 Advanced Regression
+
+- **`polynomial-regression.ipynb`**  
+  Learn how to fit **non-linear data** using polynomial features. Understand when and how to use this approach.
+
+---
+
+### ⚠️ Overfitting vs Underfitting
+
+- **`overfitting-underfitting.md`**  
+  Know the signs of underfitting (too simple) and overfitting (too complex). Learn to diagnose your model’s behavior.
+
+- **`overfitting-remedies.py`**  
+  Practical techniques to solve both problems — from cross-validation to regularization and adding more data.
+
+---
+
+### 📏 Regularization Techniques
+
+- **`l1-l2-regularization.py`**  
+  Apply **L1 (Lasso)** and **L2 (Ridge)** regularization in your regression models. Learn how these help prevent overfitting.
+
+---
+
+### ⚖️ Bias-Variance Tradeoff
+
+- **`bias-variance-tradeoff.md`**  
+  Explore one of the most important concepts in machine learning:  
+  **Bias (error due to underfitting) vs. Variance (error due to overfitting)** — and how to balance them.
+
+---
+
+## 📂 Folder Structure
