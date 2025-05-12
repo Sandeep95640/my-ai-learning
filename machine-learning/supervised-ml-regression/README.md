@@ -74,8 +74,8 @@ $$
 $$
 
 Where:
-- y_i = Actual value
-- y_hat_i = Predicted value
+- yᵢ = Actual value
+- ŷᵢ = Predicted value
 - n = Number of data points
 
 ---
@@ -90,8 +90,8 @@ $$
 $$
 
 Where:
-- y_i = Actual value
-- y_hat_i = Predicted value
+- yᵢ = Actual value
+- ŷᵢ = Predicted value
 - n = Number of data points
 
 ---
