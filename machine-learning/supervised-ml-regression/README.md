@@ -166,7 +166,7 @@ By breaking the derivative into smaller parts using the chain rule, we simplify 
 
 ---
 
-## 📉 Gradient Descent in Machine Learning
+# 📉 Gradient Descent in Machine Learning
 
 **Gradient Descent** is an optimization algorithm used to minimize a **cost function** by iteratively updating model parameters (like weights and biases) in the direction of the steepest descent — i.e., the **negative gradient** of the cost function.
 
@@ -178,60 +178,62 @@ It is the backbone of optimization in machine learning and deep learning models.
 
 In a supervised learning setup like **linear regression**, we try to fit a line:
 
-\[
-\hat{y} = w_1 x + w_0
-\]
+ŷ = w₁x + w₀
 
 Where:
-- \( \hat{y} \) is the predicted output,
-- \( w_1 \) is the weight (slope),
-- \( w_0 \) is the bias (intercept),
-- \( x \) is the input feature.
+- `ŷ` is the predicted output,
+- `w₁` is the weight (slope),
+- `w₀` is the bias (intercept),
+- `x` is the input feature.
 
-We define the **cost function** (also called loss function) to measure the difference between predicted values and actual values. A common choice is **Mean Squared Error (MSE)**:
+We define the **cost function** to measure the difference between predicted values and actual values. A common choice is **Mean Squared Error (MSE)**:
 
-\[
-J(w_1, w_0) = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - (w_1 x_i + w_0) \right)^2
-\]
+J(w₁, w₀) = (1/n) * Σ (yᵢ - ŷᵢ)²
+= (1/n) * Σ (yᵢ - (w₁xᵢ + w₀))²
+
 
 ---
 
 ## 🔁 Gradient Descent Algorithm
 
-To minimize \( J(w_1, w_0) \), we compute the **partial derivatives**:
+To minimize `J(w₁, w₀)`, we compute the **partial derivatives**:
 
-\[
-\frac{\partial J}{\partial w_1} = -\frac{2}{n} \sum_{i=1}^{n} x_i \left( y_i - \hat{y}_i \right)
-\]
-\[
-\frac{\partial J}{\partial w_0} = -\frac{2}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)
-\]
 
-We then update the weights using a small constant called the **learning rate** \( \alpha \):
+∂J/∂w₁ = -(2/n) * Σ xᵢ (yᵢ - ŷᵢ)
+∂J/∂w₀ = -(2/n) * Σ (yᵢ - ŷᵢ)
 
-\[
-w_1 := w_1 - \alpha \cdot \frac{\partial J}{\partial w_1}
-\]
-\[
-w_0 := w_0 - \alpha \cdot \frac{\partial J}{\partial w_0}
-\]
 
-Repeat the updates until the model converges (i.e., the cost stops decreasing significantly).
+We then update the weights using a small constant called the **learning rate** `α`:
+
+w₁ := w₁ - α * ∂J/∂w₁
+w₀ := w₀ - α * ∂J/∂w₀
+
+
+Repeat the updates until the model converges — i.e., the cost stops decreasing significantly.
 
 ---
 
 ## 🧠 Intuition
 
-- If the gradient is positive → decrease the weight to reduce error.
-- If the gradient is negative → increase the weight to reduce error.
-- The learning rate \( \alpha \) controls how large a step we take in each update.
+- If the gradient is **positive** → decrease the weight to reduce error.
+- If the gradient is **negative** → increase the weight to reduce error.
+- The learning rate `α` controls how large a step we take during updates.
 
+---
 
-Gradient Descent allows machine learning models to **learn from data** by minimizing the cost function. It’s a foundational technique for training models in:
-- Linear regression
-- Logistic regression
-- Neural networks
-- Deep learning
+## ✅ Applications
+
+Gradient Descent allows machine learning models to **learn from data** by minimizing the cost function. It’s a foundational technique used in:
+
+- 🔹 Linear Regression  
+- 🔹 Logistic Regression  
+- 🔹 Neural Networks  
+- 🔹 Deep Learning  
+
+---
+
+> 🔁 Gradient Descent is like rolling a ball downhill — you take steps proportional to the slope of the hill (gradient) until you reach the bottom (minimum error).
+
 
 ---
 
