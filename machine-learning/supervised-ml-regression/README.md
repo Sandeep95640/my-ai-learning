@@ -166,13 +166,72 @@ By breaking the derivative into smaller parts using the chain rule, we simplify 
 
 ---
 
-### 🧠 Gradient Descent
+## 📉 Gradient Descent in Machine Learning
 
-- **`gradient-descent-theory.md`**  
-  An intuitive guide to understanding how gradient descent finds the optimal solution step-by-step.
+**Gradient Descent** is an optimization algorithm used to minimize a **cost function** by iteratively updating model parameters (like weights and biases) in the direction of the steepest descent — i.e., the **negative gradient** of the cost function.
 
-- **`gradient-descent-implementation.py`**  
-  A clean Python implementation of gradient descent. Learn how to write it from scratch and visualize the learning process.
+It is the backbone of optimization in machine learning and deep learning models.
+
+---
+
+## 🧮 Mathematical Intuition
+
+In a supervised learning setup like **linear regression**, we try to fit a line:
+
+\[
+\hat{y} = w_1 x + w_0
+\]
+
+Where:
+- \( \hat{y} \) is the predicted output,
+- \( w_1 \) is the weight (slope),
+- \( w_0 \) is the bias (intercept),
+- \( x \) is the input feature.
+
+We define the **cost function** (also called loss function) to measure the difference between predicted values and actual values. A common choice is **Mean Squared Error (MSE)**:
+
+\[
+J(w_1, w_0) = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - (w_1 x_i + w_0) \right)^2
+\]
+
+---
+
+## 🔁 Gradient Descent Algorithm
+
+To minimize \( J(w_1, w_0) \), we compute the **partial derivatives**:
+
+\[
+\frac{\partial J}{\partial w_1} = -\frac{2}{n} \sum_{i=1}^{n} x_i \left( y_i - \hat{y}_i \right)
+\]
+\[
+\frac{\partial J}{\partial w_0} = -\frac{2}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)
+\]
+
+We then update the weights using a small constant called the **learning rate** \( \alpha \):
+
+\[
+w_1 := w_1 - \alpha \cdot \frac{\partial J}{\partial w_1}
+\]
+\[
+w_0 := w_0 - \alpha \cdot \frac{\partial J}{\partial w_0}
+\]
+
+Repeat the updates until the model converges (i.e., the cost stops decreasing significantly).
+
+---
+
+## 🧠 Intuition
+
+- If the gradient is positive → decrease the weight to reduce error.
+- If the gradient is negative → increase the weight to reduce error.
+- The learning rate \( \alpha \) controls how large a step we take in each update.
+
+
+Gradient Descent allows machine learning models to **learn from data** by minimizing the cost function. It’s a foundational technique for training models in:
+- Linear regression
+- Logistic regression
+- Neural networks
+- Deep learning
 
 ---
 
