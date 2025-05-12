@@ -296,7 +296,7 @@ Evaluate the performance of your regression model using the following metrics:
 
 ### 4️⃣ R² Score (Coefficient of Determination)
 
-- **Formula**: R² = 1 - (SS_res / SS_tot)
+- **Formula**: R² = root(MSE)
 - **Intuition**: Measures how well the regression predictions approximate the actual data.
 - **Range**:  
   - `1.0`: Perfect predictions  
@@ -336,12 +336,106 @@ print(f"R² Score: {r2:.2f}")
 
 ---
 
-### 🔧 Data Preprocessing
+# 📊 Data Preprocessing
 
-- **`data-preprocessing.py`**  
-  - **One-Hot Encoding** for categorical features  
-  - **StandardScaler** for normalization  
-  These preprocessing steps ensure your model learns effectively and fairly.
+Data preprocessing is an essential step in machine learning to clean, transform, and prepare your raw data for effective model training. This step includes techniques such as **One-Hot Encoding**, **Standard Scaling**, and handling **Missing Data** to ensure that the model receives high-quality input data.
+
+---
+
+## 🛠️ Key Steps in Data Preprocessing
+
+---
+
+### 1️⃣ **One-Hot Encoding**
+
+**Purpose**:  
+One-Hot Encoding is used to convert **categorical variables** into a numerical format that machine learning models can understand. It creates binary columns for each category, where a `1` indicates the presence of the category and `0` indicates its absence.
+
+**Why It's Important**:  
+Categorical data, like text or labels, cannot be directly fed into machine learning algorithms. One-Hot Encoding avoids the issue of creating arbitrary numeric labels, which might introduce unintended ordering into non-ordinal categories.
+
+**Example**:  
+For a column "City" with values such as `["Delhi", "Mumbai", "Chennai"]`, One-Hot Encoding would create separate binary columns:
+
+| City   | City_Delhi | City_Mumbai | City_Chennai |
+|--------|------------|-------------|--------------|
+| Delhi  | 1          | 0           | 0            |
+| Mumbai | 0          | 1           | 0            |
+| Chennai| 0          | 0           | 1            |
+
+---
+
+### 2️⃣ **Standard Scaling (Normalization)**
+
+**Purpose**:  
+Standard Scaling is used to transform numerical data so that it has a **mean of 0** and a **standard deviation of 1**. This ensures that the model treats all features equally, regardless of their original scales.
+
+**Why It's Important**:  
+Different features might have different units or ranges (e.g., one feature might be in thousands, and another in tens), and some machine learning models are sensitive to these differences. Scaling ensures that all features contribute equally to the learning process.
+
+**Example**:  
+For a column "Age" with values `[25, 35, 45]`, Standard Scaling would transform them into values that have a mean of 0 and a standard deviation of 1.
+
+---
+
+### 3️⃣ **Handling Missing Data**
+
+**Purpose**:  
+Handling missing data is crucial since most machine learning algorithms can't process incomplete datasets. There are different ways to handle missing data, including **imputation** (filling missing values with the mean, median, or mode) or **deletion** (removing rows or columns with missing values).
+
+**Why It's Important**:  
+Ignoring missing data can lead to inaccurate model predictions. By either filling or removing missing values, we ensure the model works with complete information.
+
+**Common Approaches**:
+- **Imputation**: Replace missing values with the mean, median, or mode of the column.
+- **Deletion**: Drop rows or columns that contain missing values.
+
+---
+
+### 4️⃣ **Label Encoding**
+
+**Purpose**:  
+Label Encoding is used to convert **binary or ordinal categorical** features into numeric values. This technique assigns a unique integer to each category, making it easier for machine learning models to interpret the data.
+
+**Why It's Important**:  
+It’s a simpler alternative to One-Hot Encoding when dealing with binary or ordinal features, as it does not require multiple columns.
+
+**Example**:  
+For a column "Gender" with values `["Male", "Female"]`, Label Encoding would convert it into numeric values:
+- "Male" → 0
+- "Female" → 1
+
+---
+
+### 5️⃣ **Min-Max Scaling**
+
+**Purpose**:  
+Min-Max Scaling transforms feature values to a fixed range, typically `[0, 1]`. It’s useful when you need features on the same scale and when features need to be bounded between a specific range.
+
+**Why It's Important**:  
+Some machine learning models, like neural networks, perform better when features are scaled to a specific range. Min-Max scaling helps ensure that no feature dominates others due to differences in range.
+
+**Example**:  
+For a column "Age" with values `[20, 30, 40, 50]`, Min-Max Scaling would transform them to values between 0 and 1, where:
+- Min = 20, Max = 50
+- For "Age" = 20:  
+  \(\frac{20 - 20}{50 - 20} = 0\)
+- For "Age" = 50:  
+  \(\frac{50 - 20}{50 - 20} = 1\)
+
+After Min-Max Scaling, the values would be `[0, 0.33, 0.66, 1]`.
+
+---
+
+## 🧰 Summary of Preprocessing Steps
+
+| Step                  | Purpose                              | When to Use                                   |
+|-----------------------|--------------------------------------|-----------------------------------------------|
+| **One-Hot Encoding**   | Convert categorical data to binary   | For nominal categorical features              |
+| **Standard Scaling**   | Normalize numerical data             | When features have different ranges/units     |
+| **Label Encoding**     | Convert categorical labels to numbers | For binary or ordinal categorical data       |
+| **Missing Data**       | Handle incomplete data               | When data is missing (fill or drop)           |
+| **Min-Max Scaling**    | Normalize to a fixed range [0, 1]    | When you need bounded feature range           |
 
 ---
 
