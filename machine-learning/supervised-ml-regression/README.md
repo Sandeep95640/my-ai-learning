@@ -44,8 +44,7 @@ You can explore, run, or modify the code to understand how supervised regression
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon
 \]
 
-![Multiple Linear Regression](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Multiple_regression.svg/640px-Multiple_regression.svg.png)
-
+![Multiple Linear Regression](./assets/mlr-diagram.png)
 
 ### 📌 Where:
 - **y**: Dependent variable  
