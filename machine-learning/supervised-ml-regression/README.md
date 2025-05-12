@@ -100,7 +100,6 @@ Where:
 - **MSE** is preferred when you want to heavily penalize large errors, as it squares the errors.
 - **MAE** is preferred when you want to treat all errors equally and are more robust to outliers.
 
-
   
 - **`derivative-partial-derivative.py`**  
   Grasp the importance of derivatives in machine learning. You'll learn how models use calculus to update weights.
