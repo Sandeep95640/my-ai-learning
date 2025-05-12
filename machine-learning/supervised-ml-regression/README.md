@@ -75,8 +75,8 @@ $$
 
 Where:
 - y_i = Actual value
-- y_hat_i) = Predicted value
-- \(n\) = Number of data points
+- y_hat_i = Predicted value
+- n = Number of data points
 
 ---
 
@@ -92,7 +92,7 @@ $$
 Where:
 - y_i = Actual value
 - y_hat_i = Predicted value
-- \(n\) = Number of data points
+- n = Number of data points
 
 ---
 
